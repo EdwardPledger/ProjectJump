@@ -8,7 +8,7 @@ public class ProjectileController : MonoBehaviour
     public bool HasScoreBeenAdded = false;
 
     private Rigidbody2D rb;
-    private float MoveSpeed = 3.5f;
+    public float MoveSpeed = 3.5f;
 
     private void Start()
     {
