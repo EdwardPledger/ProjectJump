@@ -13,8 +13,6 @@ public class UIManager : MonoBehaviour
         uiDocument = GetComponent<UIDocument>();
         scoreLabel = uiDocument.rootVisualElement.Q<Label>("Score");
         scoreLabel.text = scoreLabelText + score;
-
-        Debug.Log(scoreLabel);
     }
 
     private void Update()
