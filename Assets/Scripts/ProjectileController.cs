@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public static Action OnShouldUpdateScoreEvent;
+    // This is used to not keep updating the score before the projectile is destroyed
+    public bool HasScoreBeenAdded = false;
 
+    private Rigidbody2D rb;
     private float MoveSpeed = 3.5f;
 
     private void Start()
@@ -15,11 +19,23 @@ public class ProjectileController : MonoBehaviour
 
     private void Update()
     {
-        
+        if (!HasScoreBeenAdded)
+        {
+            UpdateScore();
+        }
     }
 
     private void Move()
     {
         rb.linearVelocityX = MoveSpeed;
     }
-}
+
+    private void UpdateScore()
+    {
+        if (transform.position.x > 1)
+        {
+            HasScoreBeenAdded = true;
+            OnShouldUpdateScoreEvent();
+        }
+    }
+}                 
