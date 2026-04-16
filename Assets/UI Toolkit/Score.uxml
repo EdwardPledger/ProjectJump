@@ -1,10 +1,13 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
-        <ui:VisualElement style="flex-grow: 1; width: 151px;">
-            <ui:Label text="Score:" name="Score" style="width: 411px; font-size: 40px; padding-left: 15px;"/>
+    <ui:VisualElement name="" style="flex-grow: 1; font-size: 40px;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement style="flex-grow: 1; width: 151px; height: 302px;">
+                <ui:Label text="Score:" name="Score" style="width: 411px; font-size: 40px; padding-left: 15px;"/>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; width: 148px; flex-direction: row; background-color: rgba(77, 77, 77, 0); height: 275px;">
+                <ui:Label text="High Score:" name="HighScore" style="width: 100%; font-size: 40px; align-items: stretch; -unity-text-align: upper-right; align-self: auto; flex-direction: column; padding-right: 75px;"/>
+            </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 1; width: 148px; flex-direction: row; background-color: rgba(77, 77, 77, 0);">
-            <ui:Label text="High Score:" name="HighScore" style="width: 100%; font-size: 40px; align-items: stretch; -unity-text-align: upper-right; align-self: auto; flex-direction: column; padding-right: 75px;"/>
-        </ui:VisualElement>
+        <ui:Label text="Press the Spacebar to jump" name="Spacebar" style="font-size: 30px; -unity-text-align: upper-center; justify-content: flex-start; align-content: auto;"/>
     </ui:VisualElement>
 </ui:UXML>

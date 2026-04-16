@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -21,10 +22,6 @@ public class UIManager : MonoBehaviour
 
         highScoreLabel = uiDocument.rootVisualElement.Q<Label>("HighScore");
         highScoreLabel.text = highScoreLabelText + highScore;
-    }
-
-    private void Update()
-    {
     }
 
     private void OnEnable()
