@@ -1,13 +1,15 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProjectileController : MonoBehaviour
 {
-    public static Action OnShouldUpdateScoreEvent;
-    // This is used to not keep updating the score before the projectile is destroyed
-    public bool HasScoreBeenAdded = false;
-
+    
     private Rigidbody2D rb;
+
+    public static Action OnShouldUpdateScoreEvent;
+    public static Action OnShouldUpdateHighScoreEvent;
+    public bool HasScoreBeenAdded = false;  // This is used to not keep updating the score before the projectile is destroyed
     public float MoveSpeed = 3.5f;
 
     private void Start()
@@ -37,5 +39,10 @@ public class ProjectileController : MonoBehaviour
             HasScoreBeenAdded = true;
             OnShouldUpdateScoreEvent();
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        OnShouldUpdateHighScoreEvent();
     }
 }                 
