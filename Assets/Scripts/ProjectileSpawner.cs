@@ -31,7 +31,7 @@ public class ProjectileSpawner : MonoBehaviour
         {
             SetSpeedAndRespawnTimer();
 
-            var projectileGameObject = Instantiate(projectile, new Vector3(-14f, -2.5f, 0f), Quaternion.Euler(0, 0, -90));
+            var projectileGameObject = Instantiate(projectile, new Vector3(-14f, -2.5f, 0f), Quaternion.identity);
             projectileGameObject.GetComponent<ProjectileController>().MoveSpeed = projectileSpeed;
             projectiles.Add(projectileGameObject);
 
