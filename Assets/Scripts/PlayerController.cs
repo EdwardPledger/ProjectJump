@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject gameOverUI;
     private Rigidbody2D rb;
 
     private float JumpSpeed = 6.5f;
@@ -31,6 +33,11 @@ public class PlayerController : MonoBehaviour
     // When the player hits the platform they can jump again
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag.Equals("Projectile"))
+        {
+            gameOverUI.SetActive(true);
+        }
+
         canJump = true;
     }
 }

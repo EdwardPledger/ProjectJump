@@ -35,9 +35,6 @@ public class ProjectileSpawner : MonoBehaviour
             projectileGameObject.GetComponent<ProjectileController>().MoveSpeed = projectileSpeed;
             projectiles.Add(projectileGameObject);
 
-            Debug.Log("Speed: " + projectileSpeed);
-            Debug.Log("Respawn Timer: " + respawnTimer);
-
             yield return new WaitForSeconds(respawnTimer);
         }
     }
